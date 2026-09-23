@@ -5,16 +5,26 @@ using namespace std;
 
 int main() {
     int opcion;
+    
+    do{
 
-    cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
-    cout << "1. Registrar estudiante" << endl;
-    cout << "2. Ver informacion del programa" << endl;
-    cout << "3. Salir" << endl;
-    cout << "Opción: ";
-    cin >> opcion;
-    cin.ignore();
+        do{
+            cout << "=== SISTEMA DE CALIFICACIONES ===" << endl;
+            cout << "1. Registrar estudiante" << endl;
+            cout << "2. Ver informacion del programa" << endl;
+            cout << "3. Salir" << endl;
+            cout << "Opción: ";
+            cin >> opcion;
+            cin.ignore();
 
-    switch (opcion) {
+            if (opcion < 1 || opcion > 3) {
+                cout << "Error: Opción no válida. Seleccione entre 1 y 3." << endl;
+            }
+        } while (opcion < 1 || opcion > 3);
+
+        cin.ignore();
+
+      switch (opcion) {
         case 1: {
             string nombre;
             int edad;
@@ -46,7 +56,7 @@ int main() {
             int aprobatorias = 0;
             int reprobatorias = 0;
 
-            // Nivel 4: Ciclo for para leer $n$ calificaciones
+            
             for (int i = 1; i <= numCalificaciones; i++) {
                 cout << "Ingrese la calificacion " << i << ": ";
                 cin >> calificacion;
@@ -91,7 +101,7 @@ int main() {
                 cout << "REPROBADO" << endl;
             }
 
-            // Nivel 4: Imprimir conteo y calificacion max/min
+           
             cout << "Calificaciones aprobatorias: " << aprobatorias << endl;
             cout << "Calificaciones reprobatorias: " << reprobatorias << endl;
             cout << "Calificacion mas alta: " << calificacionAlta << endl;
@@ -106,10 +116,8 @@ int main() {
         case 3:
             cout << "Saliendo del programa..." << endl;
             break;
-        default:
-            cout << "Opcion no valida." << endl;
-            break;
-    }
+        }
+    } while (opcion != 3);
 
     return 0;
 }
