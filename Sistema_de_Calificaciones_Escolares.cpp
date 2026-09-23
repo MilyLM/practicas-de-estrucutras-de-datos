@@ -26,18 +26,17 @@ int main() {
             cout << "Ingrese la edad: ";
             cin >> edad;
 
-            if (edad < 0 || edad > 120) {
-                cout << "Edad invalida" << endl;
-                return 0;
+            while (edad <= 0 || edad > 120) {
+                cout << "Error: Edad Inválida. Ingrese una edad entre 1 y 120: ";
+                cin >> edad;
             }
-
-            // Nivel 4: Preguntar la cantidad de calificaciones
-            cout << "Cuantas calificaciones deseas registrar? ";
+            
+            cout << "Cuántas calificaciones desea ingresar? ";
             cin >> numCalificaciones;
 
-            if (numCalificaciones <= 0) {
-                cout << "Cantidad de calificaciones invalida." << endl;
-                return 0;
+            while (numCalificaciones <= 0) {
+                cout << "Error: ingrese una cantidad mayor a 0: ";
+                cin >> numCalificaciones;
             }
 
             float suma = 0;
@@ -52,10 +51,10 @@ int main() {
                 cout << "Ingrese la calificacion " << i << ": ";
                 cin >> calificacion;
 
-                if (calificacion < 0 || calificacion > 10) {
-                    cout << "Error: La calificacion debe estar entre 0 y 10." << endl;
-                    return 0;
-                }
+            while (calificacion < 0 || calificacion > 10) {
+                cout << "Error: La calificación debe estar entre 0 y 10. Ingrese nuevamente: ";
+                cin >> calificacion;
+            }
 
                 suma += calificacion;
 
